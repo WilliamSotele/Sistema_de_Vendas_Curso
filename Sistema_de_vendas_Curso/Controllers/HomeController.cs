@@ -17,8 +17,9 @@ namespace Sistema_de_vendas_Curso.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
-
+            ViewData["Message"] = "Site de vendas para treinamento";
+            ViewData["Aluno"] = "William Sotele";
+            ViewData["Title"] = "Sistema de Vendas";
             return View();
         }
 
