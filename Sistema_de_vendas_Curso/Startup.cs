@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using Sistema_de_vendas_Curso.Models;
 
 namespace Sistema_de_vendas_Curso
 {
@@ -33,6 +35,9 @@ namespace Sistema_de_vendas_Curso
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<Sistema_de_vendas_CursoContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("Sistema_de_vendas_CursoContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
