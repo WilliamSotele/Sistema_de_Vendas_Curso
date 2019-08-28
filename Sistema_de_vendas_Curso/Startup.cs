@@ -38,7 +38,7 @@ namespace Sistema_de_vendas_Curso
 
             services.AddDbContext<Sistema_de_vendas_CursoContext>(options =>
                     options.UseMySql(Configuration.GetConnectionString("Sistema_de_vendas_CursoContext"), builder => 
-                    builder.MigrationsAssembly("Sistema_de_vendas_Curso")));
+                    builder.MigrationsAssembly("SistemasDeVendas")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
