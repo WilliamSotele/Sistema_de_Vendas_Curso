@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Sistema_de_vendas_Curso.Models;
+using Sistema_de_vendas_Curso.Data;
 
 namespace Sistema_de_vendas_Curso
 {
@@ -39,6 +40,8 @@ namespace Sistema_de_vendas_Curso
             services.AddDbContext<Sistema_de_vendas_CursoContext>(options =>
                     options.UseMySql(Configuration.GetConnectionString("Sistema_de_vendas_CursoContext"), builder => 
                     builder.MigrationsAssembly("SistemasDeVendas")));
+
+            services.AddScoped<ServicoControlededados>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
